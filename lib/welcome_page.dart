@@ -1,7 +1,9 @@
+import 'package:firebase_login/auth_controller.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+  String email;
+  WelcomePage({super.key, required this.email});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,7 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "koohw0109@gmail.com",
+                  email,
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.grey[500],
@@ -57,23 +59,26 @@ class WelcomePage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 200),
-          Container(
-            width: w * 0.5,
-            height: h * 0.08,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              image: const DecorationImage(
-                image: AssetImage("assets/img/loginbtn.png"),
-                fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () => AuthController.instance.logOut(),
+            child: Container(
+              width: w * 0.5,
+              height: h * 0.08,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                image: const DecorationImage(
+                  image: AssetImage("assets/img/loginbtn.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            child: const Center(
-              child: Text(
-                "Sign out",
-                style: TextStyle(
-                  fontSize: 36,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+              child: const Center(
+                child: Text(
+                  "Sign out",
+                  style: TextStyle(
+                    fontSize: 36,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
