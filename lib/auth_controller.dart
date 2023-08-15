@@ -22,14 +22,17 @@ class AuthController extends GetxController {
 
   _initialScreen(User? user) {
     if (user == null) {
-      print("login page");
-      Get.offAll(
-        () => const LoginPage(),
-      );
+      Future.delayed(const Duration(seconds: 1), () {
+        Get.offAll(
+          () => const LoginPage(),
+        );
+      });
     } else {
-      Get.offAll(
-        () => WelcomePage(email: user.email!),
-      );
+      Future.delayed(const Duration(seconds: 1), () {
+        Get.offAll(
+          () => WelcomePage(email: user.email!),
+        );
+      });
     }
   }
 
