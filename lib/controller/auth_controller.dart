@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_login/login_page.dart';
-import 'package:firebase_login/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../pages/login_page.dart';
+import '../pages/welcome_page.dart';
 
 class AuthController extends GetxController {
   // AuthController.instance..

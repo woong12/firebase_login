@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_login/auth_controller.dart';
-import 'package:firebase_login/splash_screen.dart';
+import 'package:firebase_login/controller/auth_controller.dart';
+import 'package:firebase_login/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'firebase_options.dart';
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: SplashPage(),
     );
   }
 }
